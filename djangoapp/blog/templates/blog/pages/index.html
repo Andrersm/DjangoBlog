@@ -1,5 +1,25 @@
-{% extends "blog/base.html" %}
+{% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>Olá Mundo</h1>
+  <main class="main-content section-wrapper">
+    <div class="section-content-wide">
+      <div class="section-gap">
+        {% if posts %}
+          <div class="card-grid">
+            {% for post in posts %}
+              {% include 'blog/partials/_post-card.html' with i=forloop.counter0 %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="not-found center">
+            <h1>Nenhum conteúdo encotrado para esta página</h1>
+            <p>
+              Não encontrei nada nesse link, volte para a <a href="{% url "blog:index" %}">HOME<a/>
+            </p>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </main>
 {% endblock content %}
