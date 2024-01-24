@@ -5,6 +5,7 @@ from utils.models_validators import resize_image
 from django_summernote.models import AbstractAttachment
 from django.urls import reverse
 
+
 class PostAttachment(AbstractAttachment):
     def save(self, *args, **kwargs):
         if not self.name:

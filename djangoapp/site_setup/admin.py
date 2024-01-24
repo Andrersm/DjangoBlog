@@ -13,6 +13,7 @@ from site_setup.models import MenuLink, SiteSetup
 class MenuLinkInline(admin.TabularInline):
     model = MenuLink
     extra = 1
+    
 
 
 @admin.register(SiteSetup)
